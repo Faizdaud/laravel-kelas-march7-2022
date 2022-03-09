@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\MovieController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,4 +28,18 @@ Route::get('/hello', function(Request $request){
 Route::post('/info', function(Request $request){
     return "Hello ".$request["name"]. ". You are ".$request["age"]." years old";
 });
+
+
+// linking controllers to api routes
+//linking specific functions of specific controllers to api routes
+Route::post('/movies', [MovieController::class, 'create']);
+
+Route::get('/movies', [MovieController::class, 'get']);
+
+Route::get('/movies/{id}', [MovieController::class, 'getById']);
+
+Route::put('/movies/{id}', [MovieController::class, 'update']);
+
+Route::delete('/movies/{id}', [MovieController::class, 'delete']);
+
 
