@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Movie extends Model
 {
     use HasFactory;
+    protected $fillable = ["title","poster_url","synopsis","video_url","year","director_id","category_id"];
+
+
+
 
     public function movie(){
         $this->belongsTo(Category::class);
