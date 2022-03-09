@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ActorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,5 +42,16 @@ Route::get('/movies/{id}', [MovieController::class, 'getById']);
 Route::put('/movies/{id}', [MovieController::class, 'update']);
 
 Route::delete('/movies/{id}', [MovieController::class, 'delete']);
+
+
+Route::post('/actors', [ActorController::class, 'create']);
+
+Route::get('/actors', [ActorController::class, 'getAll']);
+
+Route::get('/actors/{id}', [ActorController::class, 'getById']);
+
+Route::put('/actors/{id}', [ActorController::class, 'update']);
+
+Route::delete('/actors/{id}', [ActorController::class, 'delete']);
 
 
